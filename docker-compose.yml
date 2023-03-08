@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      .env: /run/secrets/my_env_file
+    secrets:
+      - my_env_file
+    container_name: my-voicealert-container
+
+secrets:
+  my_env_file:
+    file: .env
+
+    
+
