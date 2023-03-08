@@ -10,8 +10,8 @@ RUN npm install --production
 
 COPY . .
 
-RUN mkdir -p /run/secrets && \
-    ln -s /run/secrets/my_env_file .env
+# RUN mkdir -p /run/secrets && \
+#     ln -s /run/secrets/my_env_file .env
 
 
 CMD [ "node", "index.js" ]
